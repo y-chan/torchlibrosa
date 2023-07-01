@@ -43,10 +43,6 @@ class DFT(DFTBase):
         self.W = self.dft_matrix(n)
         self.inv_W = self.idft_matrix(n)
 
-        self.W_real = torch.Tensor(np.real(self.W))
-        self.W_imag = torch.Tensor(np.imag(self.W))
-        self.inv_W_real = torch.Tensor(np.real(self.inv_W))
-        self.inv_W_imag = torch.Tensor(np.imag(self.inv_W))
         self.register_buffer("W_real", torch.Tensor(np.real(self.W)))
         self.register_buffer("W_imag", torch.Tensor(np.imag(self.W)))
         self.register_buffer("inv_W_real", torch.Tensor(np.real(self.inv_W)))
